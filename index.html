@@ -22,6 +22,9 @@
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+          integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
 
     <style>
 
@@ -55,7 +58,7 @@
         }
 
         #calendar .fc-bg {
-            background: #e0f7fa;
+            /*background: #e0f7fa;*/
         }
 
         #calendar .fc-bgevent {
@@ -143,7 +146,7 @@
                                         <div class="col-sm-8 col-sm-offset-2">
                                             <div class="col-sm-4 col-sm-offset-2">
                                                 <div class="choice" data-toggle="wizard-checkbox">
-                                                    <input type="checkbox" name="villa" value="Design">
+                                                    <input type="radio" name="villa" value="Design">
                                                     <div class="card card-checkboxes card-hover-effect">
                                                         <i class="ti-home"></i>
                                                         <p>Villa</p>
@@ -152,9 +155,9 @@
                                             </div>
                                             <div class="col-sm-4">
                                                 <div class="choice" data-toggle="wizard-checkbox">
-                                                    <input type="checkbox" name="appartement" value="Design">
+                                                    <input type="radio" name="appartement" value="Design">
                                                     <div class="card card-checkboxes card-hover-effect">
-                                                        <i class="ti-package"></i>
+                                                        <i class="far fa-building"></i>
                                                         <p>Appartement</p>
                                                     </div>
                                                 </div>
@@ -223,7 +226,7 @@
                                                     </div>
                                                     <div class="col-sm-2 col-sm-offset-1">
                                                         <div class="form-group">
-                                                            <label>nbr de: SDBs </label>
+                                                            <label>nbr de: SDBs</label>
                                                             <input name="nbrSdb" type="number" class="form-control"
                                                                    placeholder="1">
                                                         </div>
@@ -240,7 +243,7 @@
                                                     <div class="choice" data-toggle="wizard-checkbox">
                                                         <input type="checkbox" name="jobb" value="Design">
                                                         <div class="card card-checkboxes card-hover-effect">
-                                                            <i class="ti-home"></i>
+                                                            <i class="fas fa-couch"></i>
                                                             <p>Meublé</p>
                                                         </div>
                                                     </div>
@@ -249,7 +252,7 @@
                                                     <div class="choice" data-toggle="wizard-checkbox">
                                                         <input type="checkbox" name="jobb" value="Design">
                                                         <div class="card card-checkboxes card-hover-effect">
-                                                            <i class="ti-home"></i>
+                                                            <i class="fas fa-warehouse"></i>
                                                             <p>Garage</p>
                                                         </div>
                                                     </div>
@@ -258,7 +261,7 @@
                                                     <div class="choice" data-toggle="wizard-checkbox">
                                                         <input type="checkbox" name="jobb" value="Design">
                                                         <div class="card card-checkboxes card-hover-effect">
-                                                            <i class="ti-home"></i>
+                                                            <i class="fas fa-tree"></i>
                                                             <p>Jardin</p>
                                                         </div>
                                                     </div>
@@ -267,7 +270,7 @@
                                                     <div class="choice" data-toggle="wizard-checkbox">
                                                         <input type="checkbox" name="jobb" value="Design">
                                                         <div class="card card-checkboxes card-hover-effect">
-                                                            <i class="ti-home"></i>
+                                                            <i class="fas fa-angle-double-down"></i>
                                                             <p>Sous-sol</p>
                                                         </div>
                                                     </div>
@@ -280,6 +283,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div id='calendar'></div>
+                                            <input type="hidden" name="rdv" id="rdv">
                                         </div>
                                     </div>
                                 </div>
@@ -342,6 +346,7 @@
                                                   </tr>
                                                   </tfoot>-->
                                             </table>
+                                            <input type="text" name="rdv" id="clientId">
                                         </div>
                                         <!-- /.box-body -->
                                     </div>
@@ -349,21 +354,85 @@
 
                                 <div class="tab-pane" id="description">
                                     <div class="row">
-                                        <h5 class="info-text"> Drop us a small description. </h5>
-                                        <div class="col-sm-6 col-sm-offset-1">
-                                            <div class="form-group">
-                                                <label>Place description</label>
-                                                <textarea class="form-control" placeholder=""
-                                                          rows="9"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label>Example</label>
-                                                <p class="description">"The place is really nice. We use it
-                                                    every
-                                                    sunday
-                                                    when we go fishing. It is so awesome."</p>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-md-12 ">
+                                                <div class="panel panel-success height">
+                                                    <div class="panel-heading">Details du Rendez-vous</div>
+                                                    <div class="panel-body">
+                                                        <div class="col-xs-12 col-md-12 ">
+                                                            <div class="panel panel-primary ">
+                                                                <div class="panel-heading">Details du client</div>
+                                                                <div class="panel-body">
+                                                                    <div class=" col-md-6 ">
+                                                                        <strong>Identifiant:</strong> 256<br>
+                                                                        <strong>Numero de telephone:</strong> 0696 68 94
+                                                                        98<br>
+                                                                    </div>
+                                                                    <div class=" col-md-6 ">
+                                                                        <strong>Nom complet:</strong> Berrehal Ouala
+                                                                        Eddine<br>
+
+                                                                        <strong>Date de naissence:</strong>
+                                                                        11/01/1995<br>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-12 col-md-12 ">
+                                                            <div class="panel panel-info height">
+                                                                <div class="panel-heading">Details du logement</div>
+                                                                <div class="panel-body">
+                                                                    <h5 align="center"><strong>ID logement :</strong>
+                                                                        49568<br>
+                                                                    </h5>
+                                                                    <div class=" col-md-4 ">
+                                                                        <strong>Region:</strong> Constantine<br>
+                                                                        <strong>type:</strong> Villa<br>
+                                                                        <strong>Prix:</strong> 7 500 000 DA<br>
+                                                                        <strong>Superficie:</strong> 120*2
+                                                                        m²<br>
+                                                                    </div>
+                                                                    <div class="col-md-4 ">
+                                                                        <strong>nobre de pieces:</strong> 9<br>
+                                                                        <strong>nobre d'etages:</strong> 2<br>
+                                                                        <strong>nobre de SDBs:</strong> 2<br>
+
+                                                                    </div>
+                                                                    <div class="col-md-4 ">
+                                                                        <strong>avec sous-sol:</strong> non<br>
+                                                                        <strong>avec garage:</strong> oui<br>
+                                                                        <strong>avec jardin:</strong> non<br>
+                                                                        <strong>Meublé:</strong> non<br>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-12 col-md-12 ">
+                                                            <div class="panel panel-danger height">
+                                                                <div class="panel-heading">Details de la visite</div>
+                                                                <div class="panel-body">
+                                                                    <div class=" col-md-4 ">
+                                                                        <strong>Agent ID:</strong> 69521<br>
+                                                                        <strong>Date:</strong> 20/05/2018<br>
+
+                                                                    </div>
+                                                                    <div class="col-md-4 ">
+                                                                        <strong>Nom Agent:</strong> Benghezal Ines<br>
+
+                                                                        <strong>Heure:</strong> 9:00am<br>
+
+                                                                    </div>
+                                                                    <div class="col-md-4 ">
+                                                                        <strong>Sexe:</strong> Femme<br>
+                                                                        <strong>Durée:</strong> 3h<br>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -422,25 +491,36 @@
 $("#prix").slider({});
 $("#superficie").slider({});
 $(function () {
-    $('#clientsTab').DataTable({
+    var table = $('#clientsTab').DataTable({
         'paging': true,
         'lengthChange': false,
         'searching': true,
         'ordering': true,
         'info': true,
         'autoWidth': false,
-        select: true
-    })
+        select: {
+            style: 'single'
+        }
+
+    });
+    table
+        .on('select', function (e, dt, type, indexes) {
+            var rowData = table.rows(indexes).data().toArray();
+            $('#clientId').val(rowData[0][0]);
+        })
 });
+
 $('#calendar').fullCalendar({
     themeSystem: 'standard',
+    defaultView: 'agendaWeek',
+
     header: {
         left: 'prev,next today',
         center: 'title',
-        right: 'month,agendaWeek,agendaDay'
+        right: 'agendaWeek,month'
     },
     title: "choisissez une date",
-    defaultDate: '2018-03-12',
+    // defaultDate: '2018-03-12',
     weekNumbers: false,
     navLinks: false, // can click day/week names to navigate views
     editable: false,
@@ -457,15 +537,84 @@ $('#calendar').fullCalendar({
     },
     // days of week. an array of zero-based day of week integers (0=Sunday)
     dow: [0, 1, 2, 3, 4, 5], // Monday - Thursday
-
     start: '8:00', // a start time (10am in this example)
     end: '16:00', // an end time (6pm in this example)
     //todo recuperer les visites + il faut penser a actualiser la view
     // chaque chwya wa9t pour eviter la duplicaion
     //events: 'api/visites?region=lvariableTa3LaRegion&start=laDateTa3Lyoum',
-    select: function (startDate, endDate) {
-        alert('selected ' + startDate.format() + ' to ' + endDate.format());
+    events: [
+        {
+            title: '',
+            start: '2018-04-11T08:00:00',
+            end: '2018-04-11T10:00:00'
+        },
+        {
+            title: '',
+            start: '2018-04-11T10:00:00',
+            end: '2018-04-11T11:30:00'
+        },
+        {
+            title: '',
+            start: '2018-04-11T10:00:00',
+            end: '2018-04-11T11:30:00'
+        },
+        {
+            title: '',
+            start: '2018-04-11T10:00:00',
+            end: '2018-04-11T11:30:00'
+        },
+        {
+            title: '',
+            start: '2018-04-11T10:00:00',
+            end: '2018-04-11T11:30:00'
+        },
+        {
+            title: '',
+            start: '2018-04-13T10:00:00',
+            end: '2018-04-13T11:30:00'
+        },
+        {
+            title: '',
+            start: '2018-04-13T10:00:00',
+            end: '2018-04-13T11:30:00'
+        },
+        {
+            title: '',
+            start: '2018-04-9T10:00:00',
+            end: '2018-04-9T11:30:00'
+        },
+        {
+            title: '',
+            start: '2018-04-13T12:00:00',
+            end: '2018-04-13T14:30:00'
+        },
+        {
+            title: '',
+            start: '2018-04-10T10:00:00',
+            end: '2018-04-10T11:30:00'
+        }
+    ],
+    eventColor: '#378006',
+    displayEventTime: false,
+    eventClick: function (calEvent, jsEvent, view) {
+
+        // change the border color just for fun
+        $(this).css('background', 'red');
+
+        alert('Event: ' + calEvent.start.format() + 'to ' + calEvent.end.format());
+
+
     }
+    /*select: function (startDate, endDate) {
+
+        var rdv = {
+            start: startDate.format(),
+            end: endDate.format()
+        };
+        $('#rdv').val(JSON.stringify(rdv));
+
+        //alert('selected ' + startDate.format() + ' to ' + endDate.format());
+    }*/
 })
 ;
 </script>
