@@ -114,6 +114,14 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <a href="#logements" data-toggle="tab">
+                                            <div class="icon-circle">
+                                                <i class="ti-home"></i>
+                                            </div>
+                                            logements
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="#date" data-toggle="tab">
                                             <div class="icon-circle">
                                                 <i class="ti-calendar"></i>
@@ -165,6 +173,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="tab-pane" id="params">
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -241,7 +250,7 @@
                                                 </div>
                                                 <div class="col-sm-2 col-sm-offset-2">
                                                     <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="jobb" value="Design">
+                                                        <input type="checkbox" name="meublé" value="true">
                                                         <div class="card card-checkboxes card-hover-effect">
                                                             <i class="fas fa-couch"></i>
                                                             <p>Meublé</p>
@@ -250,7 +259,7 @@
                                                 </div>
                                                 <div class="col-sm-2 ">
                                                     <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="jobb" value="Design">
+                                                        <input type="checkbox" name="garage" value="true">
                                                         <div class="card card-checkboxes card-hover-effect">
                                                             <i class="fas fa-warehouse"></i>
                                                             <p>Garage</p>
@@ -259,7 +268,7 @@
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="jobb" value="Design">
+                                                        <input type="checkbox" name="jardin" value="true">
                                                         <div class="card card-checkboxes card-hover-effect">
                                                             <i class="fas fa-tree"></i>
                                                             <p>Jardin</p>
@@ -268,7 +277,7 @@
                                                 </div>
                                                 <div class="col-sm-2 ">
                                                     <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="jobb" value="Design">
+                                                        <input type="checkbox" name="soussol" value="true">
                                                         <div class="card card-checkboxes card-hover-effect">
                                                             <i class="fas fa-angle-double-down"></i>
                                                             <p>Sous-sol</p>
@@ -279,6 +288,80 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="tab-pane" id="logements">
+                                    <div class="row">
+                                        <h5 class="info-text"> Please tell us more about yourself.</h5>
+                                        <div class="col-sm-12 col-sm-offset-0">
+                                            <table id="logementsTable" class="table table-bordered table-hover">
+                                                <thead>
+                                                <tr>
+                                                    <th>id</th>
+                                                    <th>adresse</th>
+                                                    <th>description</th>
+                                                    <th>superficie</th>
+                                                    <th>prix</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Berrehal</td>
+                                                    <td>Ouala Eddine</td>
+                                                    <td>200m²</td>
+                                                    <td>7 000 000.00 da</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Berrehal</td>
+                                                    <td>Ouala Eddine</td>
+                                                    <td>200m²</td>
+                                                    <td>7 000 000.00 da</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Berrehal</td>
+                                                    <td>Ouala Eddine</td>
+                                                    <td>200m²</td>
+                                                    <td>7 000 000.00 da</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>Berrehal</td>
+                                                    <td>Ouala Eddine</td>
+                                                    <td>200m²</td>
+                                                    <td>7 000 000.00 da</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Berrehal</td>
+                                                    <td>Ouala Eddine</td>
+                                                    <td>200m²</td>
+                                                    <td>7 000 000.00 da</td>
+                                                </tr>
+                                                </tbody>
+                                                <!--  <tfoot>
+                                                  <tr>
+                                                      <th>Rendering engine</th>
+                                                      <th>Browser</th>
+                                                      <th>Platform(s)</th>
+                                                      <th>Engine version</th>
+                                                      <th>CSS grade</th>
+                                                  </tr>
+                                                  </tfoot>-->
+                                            </table>
+                                            <input type="hidden" name="selectedlogementId" id="selectedlogementId">
+                                            <input type="hidden" name="selectedlogementprice"
+                                                   id="selectedlogementprice">
+                                            <input type="hidden" name="selectedlogementadresse"
+                                                   id="selectedlogementadresse">
+                                            <input type="hidden" name="selectedLogementSuperficie"
+                                                   id="selectedLogementSuperficie">
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                </div>
+
                                 <div class="tab-pane" id="date">
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -287,6 +370,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="tab-pane" id="client">
                                     <div class="row">
                                         <h5 class="info-text"> Please tell us more about yourself.</h5>
@@ -346,7 +430,7 @@
                                                   </tr>
                                                   </tfoot>-->
                                             </table>
-                                            <input type="text" name="rdv" id="clientId">
+                                            <input type="text" name="clientId" id="clientId">
                                         </div>
                                         <!-- /.box-body -->
                                     </div>
@@ -364,17 +448,19 @@
                                                                 <div class="panel-heading">Details du client</div>
                                                                 <div class="panel-body">
                                                                     <div class=" col-md-6 ">
-                                                                        <strong>Identifiant:</strong> 256<br>
-                                                                        <strong>Numero de telephone:</strong> 0696 68 94
-                                                                        98<br>
+                                                                        <strong>Identifiant:</strong> <span
+                                                                            id="clientIdDetails"></span><br>
+                                                                        <strong>Numero de telephone:</strong>
+                                                                        <span id="numeroTelephoneClient"></span>
+                                                                        <br>
                                                                     </div>
                                                                     <div class=" col-md-6 ">
-                                                                        <strong>Nom complet:</strong> Berrehal Ouala
-                                                                        Eddine<br>
-
+                                                                        <strong>Nom complet:</strong>
+                                                                        <span id="nomCompletClient"></span>
+                                                                        <br>
                                                                         <strong>Date de naissence:</strong>
-                                                                        11/01/1995<br>
-
+                                                                        <span id="dateNaissClient"></span>
+                                                                        <br>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -384,26 +470,48 @@
                                                                 <div class="panel-heading">Details du logement</div>
                                                                 <div class="panel-body">
                                                                     <h5 align="center"><strong>ID logement :</strong>
-                                                                        49568<br>
+                                                                        <span id="idLogementDetails"></span>
+                                                                        <br>
                                                                     </h5>
                                                                     <div class=" col-md-4 ">
-                                                                        <strong>Region:</strong> Constantine<br>
-                                                                        <strong>type:</strong> Villa<br>
-                                                                        <strong>Prix:</strong> 7 500 000 DA<br>
-                                                                        <strong>Superficie:</strong> 120*2
-                                                                        m²<br>
+                                                                        <strong>Region:</strong>
+                                                                        <span id="regionDetails"></span>
+                                                                        <br>
+                                                                        <strong>type:</strong>
+                                                                        <span id="typeDetails"></span>
+                                                                        <br>
+                                                                        <strong>Prix:</strong>
+                                                                        <span id="prixDetails"></span>
+                                                                        <br>
+                                                                        <strong>Superficie:</strong>
+                                                                        <span id="superficieDetails"></span>
+                                                                        <br>
                                                                     </div>
                                                                     <div class="col-md-4 ">
-                                                                        <strong>nobre de pieces:</strong> 9<br>
-                                                                        <strong>nobre d'etages:</strong> 2<br>
-                                                                        <strong>nobre de SDBs:</strong> 2<br>
+                                                                        <strong>nobre de pieces:</strong>
+                                                                        <span id="nbrPiecesDetails"></span>
+                                                                        <br>
+                                                                        <strong>nobre d'etages:</strong>
+                                                                        <span id="nbrEtagesDetails"></span>
+                                                                        <br>
+                                                                        <strong>nobre de SDBs:</strong>
+                                                                        <span id="nbrSDBDetails"></span>
+                                                                        <br>
 
                                                                     </div>
                                                                     <div class="col-md-4 ">
-                                                                        <strong>avec sous-sol:</strong> non<br>
-                                                                        <strong>avec garage:</strong> oui<br>
-                                                                        <strong>avec jardin:</strong> non<br>
-                                                                        <strong>Meublé:</strong> non<br>
+                                                                        <strong>avec sous-sol:</strong>
+                                                                        <span id="sousSolDetails"></span>
+                                                                        <br>
+                                                                        <strong>avec garage:</strong>
+                                                                        <span id="garageDetails"></span>
+                                                                        <br>
+                                                                        <strong>avec jardin:</strong>
+                                                                        <span id="jardinDetails"></span>
+                                                                        <br>
+                                                                        <strong>Meublé:</strong>
+                                                                        <span id="meubleDetails"></span>
+                                                                        <br>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -413,20 +521,28 @@
                                                                 <div class="panel-heading">Details de la visite</div>
                                                                 <div class="panel-body">
                                                                     <div class=" col-md-4 ">
-                                                                        <strong>Agent ID:</strong> 69521<br>
-                                                                        <strong>Date:</strong> 20/05/2018<br>
-
+                                                                        <strong>Agent ID:</strong>
+                                                                        <span id="idAgentDetails"></span>
+                                                                        <br>
+                                                                        <strong>Date:</strong>
+                                                                        <span id="dateVisiteDetails"></span>
+                                                                        <br>
                                                                     </div>
                                                                     <div class="col-md-4 ">
-                                                                        <strong>Nom Agent:</strong> Benghezal Ines<br>
-
-                                                                        <strong>Heure:</strong> 9:00am<br>
-
+                                                                        <strong>Nom Agent:</strong>
+                                                                        <span id="nomAgentDetails"></span>
+                                                                        <br>
+                                                                        <strong>Heure:</strong>
+                                                                        <span id="heureDetails"></span>
+                                                                        <br>
                                                                     </div>
                                                                     <div class="col-md-4 ">
-                                                                        <strong>Sexe:</strong> Femme<br>
-                                                                        <strong>Durée:</strong> 3h<br>
-
+                                                                        <strong>Sexe:</strong>
+                                                                        <span id="sexeAgentDetails"></span>
+                                                                        <br>
+                                                                        <strong>Durée:</strong>
+                                                                        <span id="dureeVisiteDetails"></span>
+                                                                        <br>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -485,223 +601,8 @@
 <script src="./assets/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="./assets/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <script src="./assets/datatables-select/dataTables.select.min.js"></script>
-
-<script>// With JQuery
-
-$("#prix").slider({});
-$("#superficie").slider({});
-$(function () {
-    var table = $('#clientsTab').DataTable({
-        'paging': true,
-        'lengthChange': false,
-        'searching': true,
-        'ordering': true,
-        'info': true,
-        'autoWidth': false,
-        select: {
-            style: 'single'
-        }
-
-    });
-    table
-        .on('select', function (e, dt, type, indexes) {
-            var rowData = table.rows(indexes).data().toArray();
-            $('#clientId').val(rowData[0][0]);
-        })
-});
-
-function fillOtherInputs(id) {
-
-}
-
-var calendar = $('#calendar').fullCalendar({
-    themeSystem: 'standard',
-    defaultView: 'agendaWeek',
-
-    header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'agendaWeek,month'
-    },
-    title: "choisissez une date",
-    // defaultDate: '2018-03-12',
-    weekNumbers: false,
-    navLinks: false, // can click day/week names to navigate views
-    editable: false,
-    eventLimit: true, // allow "more" link when too many events
-    hiddenDays: [6, 7], // hide Tuesdays and Thursdays
-    selectable: true,
-    unselectAuto: false,
-    businessHours: {
-        // days of week. an array of zero-based day of week integers (0=Sunday)
-        dow: [0, 1, 2, 3, 4, 5], // Monday - Thursday
-
-        start: '8:00', // a start time (10am in this example)
-        end: '16:00' // an end time (6pm in this example)
-    },
-    // days of week. an array of zero-based day of week integers (0=Sunday)
-    dow: [0, 1, 2, 3, 4, 5], // Monday - Thursday
-    start: '8:00', // a start time (10am in this example)
-    end: '16:00', // an end time (6pm in this example)
-    //todo recuperer les visites + il faut penser a actualiser la view
-    // chaque chwya wa9t pour eviter la duplicaion
-    //events: 'api/visites?region=lvariableTa3LaRegion&start=laDateTa3Lyoum',
-    events: [
-        {
-            id: '1',
-            title: '',
-            start: '2018-04-11T08:00:00',
-            end: '2018-04-11T10:00:00'
-        },
-        {
-            id: '2',
-
-            title: '',
-            start: '2018-04-11T10:00:00',
-            end: '2018-04-11T11:30:00'
-        },
-        {
-            id: '3',
-
-            title: '',
-            start: '2018-04-11T10:00:00',
-            end: '2018-04-11T11:30:00'
-        },
-        {
-            id: '4',
-
-            title: '',
-            start: '2018-04-11T10:00:00',
-            end: '2018-04-11T11:30:00'
-        },
-        {
-            id: '5',
-
-            title: '',
-            start: '2018-04-11T10:00:00',
-            end: '2018-04-11T11:30:00'
-        },
-        {
-            id: '6',
-            title: '',
-            start: '2018-04-13T10:00:00',
-            end: '2018-04-13T11:30:00'
-        },
-        {
-            id: '7',
-
-            title: '',
-            start: '2018-04-13T10:00:00',
-            end: '2018-04-13T11:30:00'
-        },
-        {
-            id: '8',
-
-            title: '',
-            start: '2018-04-9T10:00:00',
-            end: '2018-04-9T11:30:00'
-        },
-        {
-            id: '9',
-
-            title: '',
-            start: '2018-04-13T12:00:00',
-            end: '2018-04-13T14:30:00'
-        },
-        {
-            id: '10',
-
-            title: '',
-            start: '2018-04-10T10:00:00',
-            end: '2018-04-10T11:30:00'
-        }
-    ],
-    eventColor: '#378006',
-    displayEventTime: false,
-    eventClick: function (calEvent, jsEvent, view) {
-
-        // change the border color just for fun
-        $(this).css('background', 'red');
-
-        console.log('Event: ' + calEvent.start.format() + 'to ' + calEvent.end.format());
-        console.log(calEvent.id);
-        //$('#idVisite').val(calEvent.id);
-        fillOtherInputs(calEvent.id);
-        // addInputToDocument('selectedEventId', calEvent.id);
-    }
-    /*select: function (startDate, endDate) {
-
-        var rdv = {
-            start: startDate.format(),
-            end: endDate.format()
-        };
-        $('#idVisite').val(JSON.stringify(rdv));
-
-        //alert('selected ' + startDate.format() + ' to ' + endDate.format());
-    }*/
-});
+<script src="./assets/js/main.js"></script>
 
 
-function confirmerVisite() {
-
-    var idLogement = $('#idLogement').val();
-    var idClient = $('#clientId').val();
-    var idAgent = $('#idAgent').val();
-    var date = $('#date').val();
-    var heureDebut = $('#heureDebut').val();
-    var heureFin = $('#heureFin').val();
-    /*  var idLogement = "idLogement";
-      var idClient = "idClient";
-      var idAgent = "idAgent";
-      var date = "date";
-      var heureDebut = "heureDebut";
-      var heureFin = "heureFin";*/
-
-
-    var params = {
-        idLogement: idLogement,
-        idClient: idClient,
-        idAgent: idAgent,
-        date: date,
-        heureDebut: heureDebut,
-        heureFin: heureFin
-    };
-    post("#", params, "get");
-}
-
-
-function post(path, params, method) {
-    method = method || "post"; // Set method to post by default if not specified.
-
-    // The rest of this code assumes you are not using a library.
-    // It can be made less wordy if you use one.
-    var form = document.createElement("form");
-    form.setAttribute("method", method);
-    form.setAttribute("action", path);
-
-    for (var key in params) {
-        if (params.hasOwnProperty(key)) {
-            var hiddenField = document.createElement("input");
-            hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("name", key);
-            hiddenField.setAttribute("value", params[key]);
-
-            form.appendChild(hiddenField);
-        }
-    }
-
-    document.body.appendChild(form);
-    form.submit();
-}
-
-function addInputToDocument(id, value) {
-    document.body.find(id).remove();
-
-    var hiddenField = document.createElement("input");
-    hiddenField.setAttribute("type", "hidden");
-    hiddenField.setAttribute("id", id);
-    hiddenField.setAttribute("value", value);
-    document.body.appendChild(hiddenField);
-}
-</script>
 </html>
+
