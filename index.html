@@ -146,7 +146,7 @@
                                         <div class="col-sm-8 col-sm-offset-2">
                                             <div class="col-sm-4 col-sm-offset-2">
                                                 <div class="choice" data-toggle="wizard-checkbox">
-                                                    <input type="radio" name="villa" value="Design">
+                                                    <input type="checkbox" name="type" value="villa">
                                                     <div class="card card-checkboxes card-hover-effect">
                                                         <i class="ti-home"></i>
                                                         <p>Villa</p>
@@ -155,7 +155,7 @@
                                             </div>
                                             <div class="col-sm-4">
                                                 <div class="choice" data-toggle="wizard-checkbox">
-                                                    <input type="radio" name="appartement" value="Design">
+                                                    <input type="checkbox" name="type" value="appartement">
                                                     <div class="card card-checkboxes card-hover-effect">
                                                         <i class="far fa-building"></i>
                                                         <p>Appartement</p>
@@ -283,7 +283,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div id='calendar'></div>
-                                            <input type="hidden" name="rdv" id="rdv">
+                                            <input type="hidden" name="rdv" id="idVisite">
                                         </div>
                                     </div>
                                 </div>
@@ -444,7 +444,7 @@
                                            name='next'
                                            value='Next'/>
                                     <input type='button' class='btn btn-finish btn-fill btn-success btn-wd'
-                                           name='finish' value='Finish'/>
+                                           name='finish' value='Finish' onclick="confirmerVisite()"/>
                                 </div>
 
                                 <div class="pull-left">
@@ -510,7 +510,11 @@ $(function () {
         })
 });
 
-$('#calendar').fullCalendar({
+function fillOtherInputs(id) {
+
+}
+
+var calendar = $('#calendar').fullCalendar({
     themeSystem: 'standard',
     defaultView: 'agendaWeek',
 
@@ -544,51 +548,69 @@ $('#calendar').fullCalendar({
     //events: 'api/visites?region=lvariableTa3LaRegion&start=laDateTa3Lyoum',
     events: [
         {
+            id: '1',
             title: '',
             start: '2018-04-11T08:00:00',
             end: '2018-04-11T10:00:00'
         },
         {
+            id: '2',
+
             title: '',
             start: '2018-04-11T10:00:00',
             end: '2018-04-11T11:30:00'
         },
         {
+            id: '3',
+
             title: '',
             start: '2018-04-11T10:00:00',
             end: '2018-04-11T11:30:00'
         },
         {
+            id: '4',
+
             title: '',
             start: '2018-04-11T10:00:00',
             end: '2018-04-11T11:30:00'
         },
         {
+            id: '5',
+
             title: '',
             start: '2018-04-11T10:00:00',
             end: '2018-04-11T11:30:00'
         },
         {
+            id: '6',
             title: '',
             start: '2018-04-13T10:00:00',
             end: '2018-04-13T11:30:00'
         },
         {
+            id: '7',
+
             title: '',
             start: '2018-04-13T10:00:00',
             end: '2018-04-13T11:30:00'
         },
         {
+            id: '8',
+
             title: '',
             start: '2018-04-9T10:00:00',
             end: '2018-04-9T11:30:00'
         },
         {
+            id: '9',
+
             title: '',
             start: '2018-04-13T12:00:00',
             end: '2018-04-13T14:30:00'
         },
         {
+            id: '10',
+
             title: '',
             start: '2018-04-10T10:00:00',
             end: '2018-04-10T11:30:00'
@@ -601,9 +623,11 @@ $('#calendar').fullCalendar({
         // change the border color just for fun
         $(this).css('background', 'red');
 
-        alert('Event: ' + calEvent.start.format() + 'to ' + calEvent.end.format());
-
-
+        console.log('Event: ' + calEvent.start.format() + 'to ' + calEvent.end.format());
+        console.log(calEvent.id);
+        //$('#idVisite').val(calEvent.id);
+        fillOtherInputs(calEvent.id);
+        // addInputToDocument('selectedEventId', calEvent.id);
     }
     /*select: function (startDate, endDate) {
 
@@ -611,11 +635,73 @@ $('#calendar').fullCalendar({
             start: startDate.format(),
             end: endDate.format()
         };
-        $('#rdv').val(JSON.stringify(rdv));
+        $('#idVisite').val(JSON.stringify(rdv));
 
         //alert('selected ' + startDate.format() + ' to ' + endDate.format());
     }*/
-})
-;
+});
+
+
+function confirmerVisite() {
+
+    var idLogement = $('#idLogement').val();
+    var idClient = $('#clientId').val();
+    var idAgent = $('#idAgent').val();
+    var date = $('#date').val();
+    var heureDebut = $('#heureDebut').val();
+    var heureFin = $('#heureFin').val();
+    /*  var idLogement = "idLogement";
+      var idClient = "idClient";
+      var idAgent = "idAgent";
+      var date = "date";
+      var heureDebut = "heureDebut";
+      var heureFin = "heureFin";*/
+
+
+    var params = {
+        idLogement: idLogement,
+        idClient: idClient,
+        idAgent: idAgent,
+        date: date,
+        heureDebut: heureDebut,
+        heureFin: heureFin
+    };
+    post("#", params, "get");
+}
+
+
+function post(path, params, method) {
+    method = method || "post"; // Set method to post by default if not specified.
+
+    // The rest of this code assumes you are not using a library.
+    // It can be made less wordy if you use one.
+    var form = document.createElement("form");
+    form.setAttribute("method", method);
+    form.setAttribute("action", path);
+
+    for (var key in params) {
+        if (params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+
+            form.appendChild(hiddenField);
+        }
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+}
+
+function addInputToDocument(id, value) {
+    document.body.find(id).remove();
+
+    var hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("id", id);
+    hiddenField.setAttribute("value", value);
+    document.body.appendChild(hiddenField);
+}
 </script>
 </html>
