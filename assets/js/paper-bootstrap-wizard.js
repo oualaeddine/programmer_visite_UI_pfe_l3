@@ -56,6 +56,9 @@ $(document).ready(function () {
                 $validator.focusInvalid();
                 return false;
             }
+            if (index === 5) {
+                fillDetails();
+            }
         },
 
         onInit: function (tab, navigation, index) {
@@ -69,7 +72,9 @@ $(document).ready(function () {
         },
 
         onTabClick: function (tab, navigation, index) {
-
+            if (index === 5) {
+                fillDetails();
+            }
             return $('.wizard-card form').valid();
 
         },

@@ -29,11 +29,11 @@
     <style>
 
         .slider-handle {
-            background: #7AC29A;
+            background: #68B3C8;
         }
 
         .slider-selection {
-            background: #7AC29A;
+            background: #68B3C8;
         }
     </style>
 
@@ -83,7 +83,7 @@
 
                 <!--      Wizard container        -->
                 <div class="wizard-container">
-                    <div class="card wizard-card" data-color="green" id="wizard">
+                    <div class="card wizard-card" data-color="blue" id="wizard">
                         <form action="" method="">
                             <!--        You can switch " data-color="green" "  with one of the next bright colors: "blue", "azure", "orange", "red"       -->
 
@@ -153,8 +153,9 @@
                                     <div class="row">
                                         <div class="col-sm-8 col-sm-offset-2">
                                             <div class="col-sm-4 col-sm-offset-2">
-                                                <div class="choice" data-toggle="wizard-checkbox">
-                                                    <input type="checkbox" name="type" value="villa">
+                                                <div class="choice" data-toggle="wizard-radio">
+                                                    <input type="radio" class="active" checked id="villa" name="type"
+                                                           value="villa">
                                                     <div class="card card-checkboxes card-hover-effect">
                                                         <i class="ti-home"></i>
                                                         <p>Villa</p>
@@ -162,8 +163,9 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
-                                                <div class="choice" data-toggle="wizard-checkbox">
-                                                    <input type="checkbox" name="type" value="appartement">
+                                                <div class="choice" data-toggle="wizard-radio">
+                                                    <input type="radio" id="appartement" name="type"
+                                                           value="appartement">
                                                     <div class="card card-checkboxes card-hover-effect">
                                                         <i class="far fa-building"></i>
                                                         <p>Appartement</p>
@@ -182,7 +184,7 @@
                                         <div class="col-sm-6 col-sm-offset-3">
                                             <div class="form-group">
                                                 <label>Region</label><br>
-                                                <select name="region" class="form-control">
+                                                <select name="region" id="region" class="form-control">
                                                     <option disabled="" selected="">- region -</option>
                                                     <option value="Afghanistan"> Afghanistan</option>
                                                     <option value="Albania"> Albania</option>
@@ -203,8 +205,8 @@
                                                            class="span2"
                                                            style="	width: 40%;"
                                                            value=""
-                                                           data-slider-min="10" data-slider-max="1000"
-                                                           data-slider-step="5" data-slider-value="[250,450]"/>
+                                                           data-slider-min="900" data-slider-max="50000"
+                                                           data-slider-step="100" data-slider-value="[5000,11000]"/>
                                                     <span>50 000 milles da</span>
                                                 </div>
                                             </div>
@@ -215,8 +217,8 @@
                                                     <input id="superficie" name="superficie" type="text" class="span2"
                                                            style="	width: 350px;"
                                                            value=""
-                                                           data-slider-min="10" data-slider-max="1000"
-                                                           data-slider-step="10" data-slider-value="[600,750]"/>
+                                                           data-slider-min="50" data-slider-max="4000"
+                                                           data-slider-step="10" data-slider-value="[600,1600]"/>
                                                     <span>4000m²</span>
                                                 </div>
                                             </div>
@@ -229,28 +231,31 @@
                                                     <div class="col-sm-2 col-sm-offset-2">
                                                         <div class="form-group">
                                                             <label>nbr de: pieces </label>
-                                                            <input name="nbrPieces" type="number" class="form-control"
+                                                            <input name="nbrPieces" id="nbrPieces" type="number"
+                                                                   class="form-control"
                                                                    placeholder="4">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2 col-sm-offset-1">
                                                         <div class="form-group">
                                                             <label>nbr de: SDBs</label>
-                                                            <input name="nbrSdb" type="number" class="form-control"
+                                                            <input name="nbrSdb" id="nbrSdb" type="number"
+                                                                   class="form-control"
                                                                    placeholder="1">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2 col-sm-offset-1">
                                                         <div class="form-group">
                                                             <label>nbr d'etages </label>
-                                                            <input name="nbrEtages" type="number" class="form-control"
+                                                            <input name="nbrEtages" id="nbrEtages" type="number"
+                                                                   class="form-control"
                                                                    placeholder="1">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-2 col-sm-offset-2">
                                                     <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="meublé" value="true">
+                                                        <input type="checkbox" name="meuble" id="meuble" value="true">
                                                         <div class="card card-checkboxes card-hover-effect">
                                                             <i class="fas fa-couch"></i>
                                                             <p>Meublé</p>
@@ -259,7 +264,7 @@
                                                 </div>
                                                 <div class="col-sm-2 ">
                                                     <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="garage" value="true">
+                                                        <input type="checkbox" name="garage" id="garage" value="true">
                                                         <div class="card card-checkboxes card-hover-effect">
                                                             <i class="fas fa-warehouse"></i>
                                                             <p>Garage</p>
@@ -268,7 +273,7 @@
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="jardin" value="true">
+                                                        <input type="checkbox" name="jardin" id="jardin" value="true">
                                                         <div class="card card-checkboxes card-hover-effect">
                                                             <i class="fas fa-tree"></i>
                                                             <p>Jardin</p>
@@ -277,7 +282,7 @@
                                                 </div>
                                                 <div class="col-sm-2 ">
                                                     <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="soussol" value="true">
+                                                        <input type="checkbox" name="soussol" id="soussol" value="true">
                                                         <div class="card card-checkboxes card-hover-effect">
                                                             <i class="fas fa-angle-double-down"></i>
                                                             <p>Sous-sol</p>
@@ -367,6 +372,9 @@
                                         <div class="col-sm-12">
                                             <div id='calendar'></div>
                                             <input type="hidden" name="rdv" id="idVisite">
+                                            <input type="hidden" name="rdv" id="idAgent">
+                                            <input type="hidden" name="rdv" id="heureDebutVisite">
+                                            <input type="hidden" name="rdv" id="heureFinVisite">
                                         </div>
                                     </div>
                                 </div>
@@ -470,7 +478,7 @@
                                                                 <div class="panel-heading">Details du logement</div>
                                                                 <div class="panel-body">
                                                                     <h5 align="center"><strong>ID logement :</strong>
-                                                                        <span id="idLogementDetails"></span>
+                                                                        <span id="idLogementDetails"> </span>
                                                                         <br>
                                                                     </h5>
                                                                     <div class=" col-md-4 ">
@@ -481,7 +489,7 @@
                                                                         <span id="typeDetails"></span>
                                                                         <br>
                                                                         <strong>Prix:</strong>
-                                                                        <span id="prixDetails"></span>
+                                                                        <span id="prixDetails"> </span>
                                                                         <br>
                                                                         <strong>Superficie:</strong>
                                                                         <span id="superficieDetails"></span>
@@ -586,7 +594,7 @@
 <script src="assets/js/bootstrap-slider.js" type="text/javascript"></script>
 
 <!--  Plugin for the Wizard -->
-<script src="assets/js/paper-bootstrap-wizard.js" type="text/javascript"></script>
+<!--<script src="assets/js/paper-bootstrap-wizard.js" type="text/javascript"></script>-->
 
 <!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
 <script src="assets/js/jquery.validate.min.js" type="text/javascript"></script>
